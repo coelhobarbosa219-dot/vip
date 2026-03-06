@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<link rel="manifest" href="./manifest.json">    
+<meta name="theme-color" content="#000000">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spending time</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #ece9e6, #ffffff);
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 25px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .channel-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            padding: 20px;
+            border-radius: 15px;
+            color: #fff;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .channel-button img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+            object-fit: contain;
+            background: #fff;
+            border-radius: 50%;
+            padding: 5px;
+        }
+
+        .channel-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Cores específicas para cada canal */
+        .globo { background-color: #0072c6; }
+        .record { background-color: #e60012; }
+        .sbt { background-color: #00a1e5; }
+        .band { background-color: #ffcd00; color: #000; } /* cor escura para contraste */
+        .rede-tv { background-color: #ff4c00; }
+
+        @media (max-width: 500px) {
+            body { padding: 20px; }
+            h1 { font-size: 1.5rem; }
+            .channel-button { padding: 15px; }
+            .channel-button img { width: 50px; height: 50px; }
+        }
+/* ===== BOTÃO INSTALAR BONITO ===== */
+
+#btnInstall {
+    margin-top: 30px;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #0072ff, #00c6ff);
+    color: white;
+    box-shadow: 0 6px 18px rgba(0, 114, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+#btnInstall:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 114, 255, 0.6);
+}
+
+#btnInstall:active {
+    transform: scale(0.95);
+}
+    </style>
+</head>
+<body>
+    <h1>spending time</h1>
+    <div class="button-container">
+        <!-- Globo -->
+        <a href="http://hls1.sua.tv/live/globotvbahiafhdbr2/s.m3u8
+" target="_blank" class="channel-button globo">
+            <img src="https://images.seeklogo.com/logo-png/18/1/tv-globo-logo-png_seeklogo-181162.png" alt="Globo">
+            <span>Globo</span>
+        </a>
+
+        <!-- Ge-TV -->
+        <a href="https://rnw-rn.otteravision.com/rnw/rn/rnw_rn.m3u8" target="_blank" class="channel-button record">
+            <img src="https://th.bing.com/th/id/OIP.4Z8Ru4iEFCeei6oUcD6fTQHaFj?w=226&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="GeTv">
+            <span>Record</span>
+        </a>
+
+        <!-- Ge-TV -->
+        <a href="https://dai.google.com/linear/hls/event/1XSOdtQ0SH2G8OEmEfGgjQ/master.m3u8" target="_blank" class="channel-button record">
+            <img src="https://i.ytimg.com/vi/Ziq7XKAlr6E/maxresdefault.jpg" alt="GeTv">
+            <span>SBT News</span>
+        </a>
+
+<!-- Ge-TV -->
+        <a href="https://video08.logicahost.com.br/portaldatropical02/portaldatropical02/chunklist_w1589932685.m3u8" target="_blank" class="channel-button record">
+            <img src="https://upload.wikimedia.org/wikipedia/pt/b/bc/Logotipo_da_TV_Tropical_%28Natal%29.png" alt="GeTv">
+            <span>Tv Tropical</span>
+        </a>
+
+        <!-- FIFA -->
+        <a href="https://a62dad94.wurl.com/master/f36d25e7e52f1ba8d7e56eb859c636563214f541/UmFrdXRlblRWLWV1X0ZJRkFQbHVzRW5nbGlzaF9ITFM/playlist.m3u8" target="_blank" class="channel-button sbt">
+            <img src="https://icon2.cleanpng.com/lnd/20241222/jb/5f86fa00f0d96411dd912694a63f9b.webp" alt="SBT">
+            <span>FIFA</span>
+        </a>
+
+        <!-- Sportv -->
+        <a href="https://globoplay.globo.com/ao-vivo/7689934/" target="_blank" class="channel-button band">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO6SpbEgXW9JZwi6iZKKIEZ7hlORG3YPqr2g&s" alt="Band">
+            <span>Sportv</span>
+        </a>
+
+        <!-- ESPN -->
+        <a href="https://stmv1.srvif.com/jetsontv/jetsontv/playlist.m3u8" target="_blank" class="channel-button rede-tv">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/The_Jetsons_%28television_series_logo%29.png" alt="RedeTV">
+            <span>ESPN</span>
+        </a>
+
+         <!-- ESPN 2-->
+        <a href="https://stmv1.srvif.com/gospelcartoon/gospelcartoon/playlist.m3u8" target="_blank" class="channel-button rede-tv">
+            <img src="https://i.imgur.com/yxjPno5.png" alt="RedeTV">
+            <span>Gospel Cartoon</span>
+        </a>
+<!-- ESPN -->
+        <a href="https://amogonetworx-grjngo-1-eu.plex.wurl.tv/playlist.m3u8" target="_blank" class="channel-button rede-tv">
+            <img src="https://www.filmclub.es/wp-content/uploads/2012/12/Django-Unchained_old-header.jpg" alt="Django">
+            <span>Djando</span>
+        </a>
+<!-- ESPN -->
+        <a href="https://tv02.zas.media:1936/redesuper/redesuper/playlist.m3u8
+" target="_blank" class="channel-button rede-tv">
+            <img src="https://i.imgur.com/rNizzxd.png" alt="Django">
+            <span>Rede Super</span>
+        </a>
+
+        <!-- Sportv 2 -->
+        <a href="https://globoplay.globo.com/ao-vivo/7690141/" target="_blank" class="channel-button rede-tv">
+            <img src="https://th.bing.com/th/id/OIP.TvcIiiS55WChjDr00d8DkwHaFj?w=234&h=180&c=7&r=0&o=7&pid=1.7&rm=3/1024px-SporTV_logo_2016.png" alt="RedeTV">
+            <span>sportv 2</span>
+        </a>
+    </div>
+<button id="btnInstall" style="display:none;">📲 Instalar App</button>
+<script>
+let deferredPrompt;
+const btnInstall = document.getElementById("btnInstall");
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  btnInstall.style.display = "block"; // mostra o botão
+});
+
+btnInstall.addEventListener("click", async () => {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    console.log("Resultado da instalação:", outcome);
+    deferredPrompt = null;
+    btnInstall.style.display = "none";
+  }
+});
+
+// Registrar o Service Worker
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js");
+}
+</script>
+<script>
+/* ===================================================
+   🔐 SISTEMA DE PROTEÇÃO PWA - NÍVEL MÁXIMO FRONT-END
+   =================================================== */
+
+/* =========================
+   1️⃣ CONTROLE DE INSTALAÇÃO
+========================= */
+
+let deferredPrompt;
+const btnInstall = document.getElementById("btnInstall");
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  btnInstall.style.display = "block";
+});
+
+btnInstall.addEventListener("click", async () => {
+  if (!deferredPrompt) return;
+
+  deferredPrompt.prompt();
+  const choice = await deferredPrompt.userChoice;
+
+  if (choice.outcome === "accepted") {
+    console.log("App instalado");
+  } else {
+    console.log("Instalação recusada");
+  }
+
+  deferredPrompt = null;
+  btnInstall.style.display = "none";
+});
+
+/* =========================
+   2️⃣ DETECTA SE É PWA INSTALADO
+========================= */
+
+function isRunningStandalone() {
+  return window.matchMedia("(display-mode: standalone)").matches ||
+         window.navigator.standalone === true;
+}
+
+/* =========================
+   3️⃣ BLOQUEIO SE NÃO INSTALADO
+========================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+ if (!isRunningStandalone()) {
+  console.log("Abra pelo app instalado para liberar tudo");
+}
+
+  protegerLinks();
+});
+
+/* =========================
+   4️⃣ CRIPTOGRAFIA DOS LINKS
+========================= */
+
+function protegerLinks() {
+
+  const links = document.querySelectorAll(".channel-button");
+
+  links.forEach(link => {
+
+    // Salva URL original codificada
+    const originalUrl = link.getAttribute("href");
+    const encoded = btoa(originalUrl);
+
+    // Remove href real
+    link.removeAttribute("href");
+
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+
+      // Pequena validação extra
+      if (!isRunningStandalone()) {
+        alert("Acesso permitido apenas pelo App instalado.");
+        return;
+      }
+
+      const decoded = atob(encoded);
+      window.open(decoded, "_blank");
+    });
+
+  });
+
+}
+
+/* =========================
+   5️⃣ DETECÇÃO DE DEVTOOLS
+========================= */
+
+let devtoolsAberto = false;
+
+setInterval(() => {
+
+  const largura = window.outerWidth - window.innerWidth > 160;
+  const altura  = window.outerHeight - window.innerHeight > 160;
+
+  if (largura || altura) {
+    if (!devtoolsAberto) {
+      devtoolsAberto = true;
+      bloquearAcesso();
+    }
+  }
+
+}, 1000);
+
+function bloquearAcesso() {
+  document.body.innerHTML = `
+    <div style="text-align:center;padding:40px">
+      <h1>🚫 Acesso bloqueado</h1>
+      <p>Ferramentas de desenvolvedor detectadas.</p>
+    </div>
+  `;
+}
+
+/* =========================
+   6️⃣ BLOQUEIO DE AÇÕES COMUNS
+========================= */
+
+// Bloqueia botão direito
+document.addEventListener("contextmenu", e => e.preventDefault());
+
+// Bloqueia atalhos comuns
+document.addEventListener("keydown", function(e) {
+  if (
+    e.key === "F12" ||
+    (e.ctrlKey && e.shiftKey && ["I","J","C"].includes(e.key)) ||
+    (e.ctrlKey && e.key === "U")
+  ) {
+    e.preventDefault();
+    bloquearAcesso();
+  }
+});
+
+/* =========================
+   7️⃣ REGISTRO DO SERVICE WORKER
+========================= */
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js")
+    .then(() => console.log("Service Worker registrado"))
+    .catch(() => console.log("Erro ao registrar SW"));
+}
+
+</script>
+</body>
+</html>
